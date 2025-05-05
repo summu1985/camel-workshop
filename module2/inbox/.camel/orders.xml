@@ -1,0 +1,17 @@
+<orders>
+    <order>
+        <id>ABC123</id>
+        <sender>Glenn</sender>
+        <receiver>Sachin</receiver>
+    </order>
+    <order>
+        <id>XYZ789</id>
+        <sender>Bumrah</sender>
+        <receiver>Dhoni</receiver>
+    </order>
+    <order>
+        <id>XYZ789</id>
+        <sender>Ashwin</sender>
+        <receiver>Pant</receiver>
+    </order>
+</orders>
