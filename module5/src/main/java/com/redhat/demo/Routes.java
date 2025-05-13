@@ -17,11 +17,12 @@ public class Routes extends RouteBuilder {
         
         rest("/lead")
         .post()
-        .wireTap("direct:postLeadToKafka")
-        .setBody(constant("Sent input request to Kafka. Expect response shortly."));
+        .to("direct:postLeadToKafka");
+        
 
         from("direct:postLeadToKafka")
-        .to("kafka:{{kafka.topic.name}}");
+        .wireTap("kafka:{{kafka.topic.name}}")
+        .setBody(constant("Sent input request to Kafka. Expect response shortly."));
 
         // from("direct:postLead")
         // .setHeader(Exchange.CONTENT_TYPE, simple("application/json"))
