@@ -7,17 +7,17 @@ public class Routes extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         // from("timer:foo?period=1000")
-        // .setBody(simple("Welcome,to,Camel,Workshop"))
+        // .setBody(constant("Welcome,to,Camel,Workshop,done,by,Sumit,and,attended,by,Manipal,and,VPSL,teams"))
         // .split(body().tokenize(",")).parallelProcessing()
         // .to("log:split");
 
         /* snippet 2 */
         // from("file:inbox")
-        // .split().tokenizeXML("order").streaming()
+        // .split().tokenizeXML("order").parallelProcessing()
         // .log("${body}");
 
         /* Snippet 3 */
-        // from("file:inbox")
+        // from("file:inbox?includeExt=xml")
         // .split().tokenizeXML("order").parallelProcessing()
         // .choice()
         // .when(body().contains("Sachin"))
