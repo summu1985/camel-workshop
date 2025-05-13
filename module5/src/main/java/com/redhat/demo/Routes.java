@@ -17,7 +17,7 @@ public class Routes extends RouteBuilder {
         
         rest("/lead")
         .post()
-        .wiretap("direct:postLeadToKafka")
+        .wireTap("direct:postLeadToKafka")
         .setBody(constant("Sent input request to Kafka. Expect response shortly."));
 
         from("direct:postLeadToKafka")
